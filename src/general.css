@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+::selection{
+    background-color: #222;
+    color: orangered;
+}
+body{
+    font-family: "Poppins", sans-serif;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+header nav {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+header nav ul{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+header nav ul li{
+    padding: 20px 0;
+}
+header nav ul li a{
+    padding: 20px;
+    color: #222;
+    font-size: 25px;
+    font-weight: 500;
+    transition: 0.5s all ease-in-out;
+}
+header nav ul li a:hover{
+    background-color: #222;
+    color: #fff;
+}
+#loginPage{
+    width: 100%;
+    padding-bottom: 160px;
+    position: relative;
+    background-color: rgb(52, 52, 241);
+}
+#loginPage .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("./img/login-bg1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: .5;
+}
+#loginPage .login-container{
+    width: 90%;
+    margin: 0px auto;
+    padding-top: 50px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+#loginPage .login-container .loginError{
+    color: red;
+    padding-bottom: 10px;
+}
+#loginPage .login-container .registerError{
+    color: red;
+    padding-bottom: 10px;
+}
+#loginPage .login-container .title{
+    text-align: center;
+    padding-bottom: 50px;
+}
+#loginPage .login-container .title h2{
+    font-size: 35px;
+    font-weight: 500;
+}
+#loginPage .login-container .form-container .form-img{
+    width: 50%;
+}
+#loginPage .login-container .form-container .form-img img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+#loginPage .login-container .form-container{
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#loginPage .login-container .form-container .form{
+    width: 50%;
+    background-color: #222;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#loginPage .login-container .form-container .form form{
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+#loginPage .login-container .form-container .form form .form-title h3{
+    font-size: 25px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+#loginPage .login-container .form-container .form form .input-fluid label{
+    font-size: 15px;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+#loginPage .login-container .form-container .form form .input-fluid{
+    padding-bottom: 20px;
+}
+#loginPage .login-container .form-container .form form .input-fluid .input-box{
+    display: flex;
+    align-items: center;
+    border: 1px solid #999;
+    padding: 10px;
+}
+#loginPage .login-container .form-container .form form .input-fluid .input-box input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding-left: 10px;
+    width: 100%;
+}
+#loginPage .login-container .form-container .form form .forgetAndSignIn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#loginPage .login-container .form-container .form form .forgetAndSignIn span a{
+    color: rgb(233, 10, 77);
+}
+#loginPage .login-container .form-container .form form .forgetAndSignIn button{
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    background-color: #1e5363;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+}
+#loginPage .login-container .form-container .form form .forgetAndSignIn button:hover{
+    background-color: #13333d;
+}
+#loginPage .login-container .form-container .form form .forSignUp {
+    padding-top: 30px;
+}
+#loginPage .login-container .form-container .form form .forSignUp a{
+    color: #fff;
+}
+.requestsTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    z-index: 1111;
+}
+
+.requestsTable th, .requestsTable td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.requestsTable th {
+    background-color: #f2f2f2;
+}
+
+.requestsTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.requestsTable tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.requestsTable tbody tr:hover {
+    background-color: #ddd;
+}
+
+.requestsTable td {
+    text-align: center;
+}
+
+.requestsTable table tbody tr td button{
+    cursor: pointer;
+    padding: 10px 30px;
+    font-size: 18px;
+    background-color: #1395bd;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #fff;
+    transition: 0.5s all ease-in-out;
+    margin-right: 10px; 
+    column-gap: 5px;
+}
+.requestsTable table tbody tr td button:hover{
+    background-color: #13333d;
+}
+.requestsTable table tbody tr td button a{
+    color: #fff;
+} 
+.requestsTable table tbody tr td .archive{
+    background-color: rgb(143, 7, 7);
+}
+.requestsTable table tbody tr td .archive:hover{
+    background-color: red;
+}
+.archivesTable {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.archivesTable th, .archivesTable td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+.archivesTable th {
+    background-color: #f2f2f2;
+}
+.archivesTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.archivesTable tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+.archiveButton {
+    background-color: #4CAF50; /* Yeşil */
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+
+}
+.archiveButton:hover {
+    background-color: #45a049; /* Koyu yeşil */
+}
+.offerForm{
+    padding-top: 100px;
+}
+.offerForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.offerForm .input-fluid {
+  margin-bottom: 20px;
+}
+.offerForm .input-fluid label {
+  display: block;
+  margin-bottom: 5px;
+}
+.offerForm .input-fluid input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.offerForm .offerSend button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.offerForm .offerSend button span {
+  margin-left: 10px;
+}
+.offerForm .offerSend button:focus {
+  outline: none;
+}
+.offerForm .offerSend button:hover {
+  background-color: #0056b3;
+}
+.success-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-image: url("./img/success-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+.success {
+    background-color: #f0f8ff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; 
+    text-align: center; 
+}
+.success-icon {
+    margin-bottom: 15px; 
+    font-size: 30px;
+}
+.success-message p {
+    margin: 0; 
+    font-size: 20px;
+    color: #008000;
+}
+.success-message p br {
+    display: none;
+    margin-bottom: 5px;
+}
+.success-message p {
+    line-height: 1.5;
+}
+
+
