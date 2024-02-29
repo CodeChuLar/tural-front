@@ -3,6 +3,7 @@ import TableRow from './table-row'
 import axios from 'axios';
 
 export default function RequestTable() {
+    const [selectedRequestId, setSelectedRequestId] = useState(null);
     const [requestsList,setRequestsList] = useState([]);
 
     function getRequests(){
@@ -11,9 +12,12 @@ export default function RequestTable() {
             console.log(res.data)
         })
     }
-     useEffect(()=>{
-             getRequests();
-     },[])
+    useEffect(()=>{
+        getRequests();
+    },[])
+    const handleOfferClick = (requestId) => {
+        setSelectedRequestId(requestId);
+    };
   return (
          <>
                 <div className='requestsTable'>
@@ -29,12 +33,13 @@ export default function RequestTable() {
                         <tbody>
                             {
                                 requestsList.map((data)=>(
-                                    <TableRow name={data.fullName} phone={data.phoneNumber} status={data.active ? "pending" : "assigned"}/>
+                                    <TableRow id={data.id} onOfferClick={handleOfferClick}  name={data.fullName} phone={data.phoneNumber} status={data.active ? "pending" : "assigned"}/>
                                  ))
                             }
                         </tbody>
                     </table>
                 </div>
+                {selectedRequestId && <OfferForm requestId={selectedRequestId} />}
          </>
   )
 }
