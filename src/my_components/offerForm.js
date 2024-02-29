@@ -10,7 +10,7 @@ export default function OfferForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('', {
+            const response = await axios.post(`http://localhost:8081/api/v1/offers?requestId=${requestId}&agentId=${agentId}`, {
                 price: price,
                 dateRange: dateRange,
                 additionalInfo: additionalInfo

@@ -11,7 +11,7 @@ export default function Register() {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [voen, setVoen] = useState('');
-    const [companyName, setcompanyName] = useState('');
+    const [companyName, setCompanyName] = useState('');
     const [agentName, setAgentName] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate()
@@ -35,7 +35,7 @@ export default function Register() {
             return;
         }
         try {
-            const response = await axios.post('https://3af9-82-194-17-140.ngrok-free.app/api/auth/register', {
+            const response = await axios.post('http://localhost:8081/api/auth/register', {
                 email: email,
                 password: password,
                 username: username,
@@ -48,11 +48,11 @@ export default function Register() {
             setAgentName("");
             setUsername("");
             setVoen("");
-            setcompanyName("");
+            setCompanyName("");
             navigate("/registeredOk")
             console.log('Response:', response.data);
         } catch (error) {
-            setError("Serverde xəta baş verdi!")
+            setError("Xəta baş verdi!")
             console.error('Error:', error);
         }
 
@@ -89,6 +89,17 @@ export default function Register() {
                                                id='name' 
                                                value={agentName}
                                                onChange={(e) => setAgentName(e.target.value)}/>
+                                    </div>
+                                </div>
+                                <div className='input-fluid'>
+                                    <label htmlFor='username'>Company Name</label>
+                                    <div className='input-box'>
+                                        <FaUserCircle />
+                                        <input type='text' 
+                                               name='username' 
+                                               id='username' 
+                                               value={companyName}
+                                               onChange={(e) => setCompanyName(e.target.value)}/>
                                     </div>
                                 </div>
                                 <div className='input-fluid'>

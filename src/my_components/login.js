@@ -17,7 +17,7 @@ export default function Login() {
             return;
         }
         try {
-            const response = await axios.post('https://3af9-82-194-17-140.ngrok-free.app/api/auth/login', {
+            const response = await axios.post('http://localhost:8081/api/auth/login', {
                 email: email,
                 password: password
             });
