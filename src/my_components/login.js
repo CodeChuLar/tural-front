@@ -21,9 +21,13 @@ export default function Login() {
                 email: email,
                 password: password
             });
+            console.log(response)
             setEmail("");
             setPassword("");
+            const agentId = response.data.agentId; 
+            navigate("/offerSend", {agentId:agentId})
             navigate("/requests")
+
         } catch (error) {
             console.error('Error:', error);
             setError("Invalid email or password. Please try again.")

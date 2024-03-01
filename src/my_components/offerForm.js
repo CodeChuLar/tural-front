@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Inputfluid from './input-fluid'
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
-export default function OfferForm({requestId}) {
+export default function OfferForm({requestId},{agentId}) {
     
     const [price, setPrice] = useState("");
     const [dateRange, setDateRange] = useState("");

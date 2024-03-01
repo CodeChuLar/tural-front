@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TableRow from './table-row'
 import axios from 'axios';
-
+import OfferForm from './offerForm';
 export default function RequestTable() {
     const [selectedRequestId, setSelectedRequestId] = useState(null);
     const [requestsList,setRequestsList] = useState([]);
