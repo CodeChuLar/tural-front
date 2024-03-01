@@ -49,7 +49,7 @@ export default function Register() {
             setUsername("");
             setVoen("");
             setCompanyName("");
-            navigate("/registeredOk")
+            navigate("/registeredOk");
             console.log('Response:', response.data);
         } catch (error) {
             setError("Xəta baş verdi!")

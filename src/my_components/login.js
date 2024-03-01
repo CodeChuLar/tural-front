@@ -3,6 +3,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { CgPassword } from "react-icons/cg";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import OfferForm from './offerForm';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,13 +22,10 @@ export default function Login() {
                 email: email,
                 password: password
             });
-            console.log(response)
             setEmail("");
             setPassword("");
-            const agentId = response.data.agentId; 
-            navigate("/offerSend", {agentId:agentId})
-            navigate("/requests")
-
+            <OfferForm agentId={response.id}/>
+            navigate("/requests");
         } catch (error) {
             console.error('Error:', error);
             setError("Invalid email or password. Please try again.")

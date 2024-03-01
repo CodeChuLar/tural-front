@@ -9,15 +9,13 @@ export default function RequestTable() {
     function getRequests(){
         axios.get(`http://localhost:8081/api/v1/requests`).then((res)=>{
             setRequestsList(res.data);
+            <OfferForm requestId={res.id}/>
             console.log(res.data)
         })
     }
     useEffect(()=>{
         getRequests();
     },[])
-    const handleOfferClick = (requestId) => {
-        setSelectedRequestId(requestId);
-    };
   return (
          <>
                 <div className='requestsTable'>
