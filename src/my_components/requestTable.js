@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import TableRow from './table-row'
 import axios from 'axios';
-import AgencyContextApi from './agencyContextApi';
+import { create } from './agencyContextApi';
 export default function RequestTable() {
-    const {createRequestId } = useContext(AgencyContextApi);
+    const x = useContext(create);
     const [requestsList,setRequestsList] = useState([]);
     function getRequests(){
         axios.get(`http://localhost:8081/api/v1/requests`).then((res)=>{
@@ -11,7 +11,7 @@ export default function RequestTable() {
         })
     }
     function handleOfferClick(id) {
-        createRequestId(id);
+        x.createRequestId(id);
     }
     useEffect(()=>{
         getRequests();
