@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const create = createContext();
 
 export default function AgencyContextApi(props) {
-    const [agentId, setAgentId] = useState(null);
+    const [agentId, setAgentId] = useState(1);
     const [requestId, setRequestId] = useState(null);
 
     const createAgentId = (newAgentId) => {
