@@ -32,7 +32,7 @@ export default function OfferForm() {
     };
     
     function getRequest(){
-        axios.get(`http://localhost:8081/api/v1/requests/${requestId}`).then((res) => {
+        axios.get(`http://localhost:8081/api/v1/requests/${x.requestId}`).then((res) => {
                 setAnswers(res.data.answers);
         })
     }
