@@ -9,7 +9,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(true);
     const navigate = useNavigate();
-    var x = useContext(create);
+    const { createAgentId } = useContext(AgencyContext);
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -24,7 +24,7 @@ export default function Login() {
             });
             setEmail("");
             setPassword("");
-            x.createAgentId(response.agentId);
+            createAgentId(response.data.agentId);
             navigate("/requests");
         } catch (error) {
             console.error('Error:', error);
