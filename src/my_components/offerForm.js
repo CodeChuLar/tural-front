@@ -5,7 +5,8 @@ import axios from 'axios';
 import { create } from './agencyContextApi';
 export default function OfferForm() {
     var x = useContext(create);
-    
+    console.log("request id:", x.requestId)
+    console.log("agent id:", x.agentId);
     const [price, setPrice] = useState("");
     const [dateRange, setDateRange] = useState("");
     const [additionalInfo, setAdditionalInfo] = useState("");

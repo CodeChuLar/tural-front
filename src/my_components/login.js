@@ -24,9 +24,8 @@ export default function Login() {
             });
             setEmail("");
             setPassword("");
-            console.log(response.data.agentId)
-            // x.createAgentId(response.data.agentId);
-            // navigate("/requests");
+            x.createAgentId(response.data.agentId);
+            navigate("/requests");
         } catch (error) {
             console.error('Error:', error);
             setError("Invalid email or password. Please try again.")

@@ -16,7 +16,6 @@ export default function RequestTable() {
     useEffect(()=>{
         getRequests();
     },[])
-    console.log("agentId:", x.agentId); 
   return (
          <>
                 <div className='requestsTable'>
