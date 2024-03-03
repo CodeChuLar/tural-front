@@ -4,10 +4,10 @@ export default function AgencyContextApi(props) {
      const [agentId,setAgentId] = useState(null);
      const [requestId,setRequestId] = useState(null);
      const createAgentId = (newAgentId) => {
-        setAgency(newAgentId);
+        setAgentId(newAgentId);
     };
     const createRequestId = (newRequestId) => {
-        setAgency(newRequestId);
+        setRequestId(newRequestId);
     };
   return (
         <>
