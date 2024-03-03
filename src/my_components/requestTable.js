@@ -16,7 +16,7 @@ export default function RequestTable() {
     useEffect(()=>{
         getRequests();
     },[])
-   
+    console.log("agentId:", x.agentId); 
   return (
          <>
                 <div className='requestsTable'>
@@ -31,8 +31,9 @@ export default function RequestTable() {
                         </thead>
                         <tbody>
                             {
-                                requestsList.map((data)=>(
+                                requestsList.map((data,index)=>(
                                     <TableRow 
+                                         key={data.id}
                                          name={data.fullName} 
                                          phone={data.phoneNumber} 
                                          status={data.active ? "pending" : "assigned"}
