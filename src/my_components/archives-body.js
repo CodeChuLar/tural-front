@@ -19,16 +19,10 @@ export default function ArchivesBody() {
             </thead>
             <tbody>
             {x.archiveList.map((arc, index) => (
-                <tr key={index}> {/* Add key prop for each list item */}
+                <tr key={index}>
                   <td>{arc.fullName}</td>
                   <td>{arc.phoneNumber}</td>
                   <td>{arc.status}</td>
-                  <td>
-                    <button className="archiveButton"> {/* Fix class to className */}
-                      <span>Restore</span>
-                      <TbRestore />
-                    </button>
-                  </td>
                 </tr>
             ))}
             </tbody>
