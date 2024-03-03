@@ -35,18 +35,18 @@ export default function RequestTable() {
         x.createRequestId(id);
     }
     const handleArchiveClick = (id) =>{
+        axios.put(`http://localhost:8081/api/v1/archives/request/${id}`)
+        .then(function (response) {
+            console.log(response.data);
+        })
+        .catch(function (error) {
+            console.error(error.response.data);
+        });
         const archivedRequest = requestsList.find(req => req.id === id);
         x.setArchiveList([...x.archiveList, archivedRequest]);
         setRequestsList(requestsList.filter(req => req.id !== id));
-        axios.put(`http://localhost:8081/api/v1/archives/request/${id}`)
-                .then(function (response) {
-                    console.log(response.data);
-                })
-                .catch(function (error) {
-                    console.error(error.response.data);
-                });
     }
-    
+
     useEffect(() => {
         getRequests();
     }, [])
