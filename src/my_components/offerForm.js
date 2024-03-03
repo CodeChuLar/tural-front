@@ -54,15 +54,16 @@ export default function OfferForm() {
                 </form>
                 <div id='answers'>
                      <Answers
-                            destinationType={answers[0]}
-                            language={answers[1]}
-                            dateRange={answers[2]}
-                            include={answers[3]}
-                            group={answers[4]}
-                            budget={answers[5]}
-                            travelOfType={answers[6]}
-                            departurePoint={answers[7]}
-                            appointment={answers[8]}
+                            destinationType={answers.TeyinatNovu}
+                            language={answers.Language}
+                            numberOfPerson={answers.KimKim}
+                            dateRange={answers.TarixAraligi}
+                            include={answers.NeDaxildir}
+                            group={answers.Qrup}
+                            budget={answers.Budce}
+                            travelOfType={answers.SeyahetTipi}
+                            departurePoint={answers.YolaDusur}
+                            appointment={answers.Teyinat}
                      />
                 </div>
             </div>

@@ -18,6 +18,10 @@ export default function Answers(props) {
               <td>{props.language}</td>
             </tr>
             <tr>
+              <td>Nəfər sayı</td>
+              <td>{props.numberOfPerson}</td>
+            </tr>
+            <tr>
               <td>Tarix Aralığı</td>
               <td>{props.dateRange}</td>
             </tr>
