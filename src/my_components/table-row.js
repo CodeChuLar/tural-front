@@ -16,7 +16,7 @@ export default function TableRow(props) {
                     </button>
                 </Link>
                 <button className='archive'>
-                    <PiArchiveBoxDuotone />
+                    <PiArchiveBoxDuotone  onClick={props.onArchiveClick}/>
                     <span>Archive</span>
                 </button>
             </td>

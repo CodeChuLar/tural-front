@@ -34,7 +34,11 @@ export default function RequestTable() {
     function handleOfferClick(id) {
         x.createRequestId(id);
     }
-
+    const handleArchiveClick = (id) =>{
+        const archivedRequest = requestsList.find(req => req.id === id);
+        x.setArchiveList([...x.archiveList, archivedRequest]);
+        setRequestsList(requestsList.filter(req => req.id !== id));
+    }
     useEffect(() => {
         getRequests();
     }, [])
@@ -59,7 +63,8 @@ export default function RequestTable() {
                                 name={data.fullName}
                                 phone={data.phoneNumber}
                                 status={data.status} 
-                                onOfferClick={() => handleOfferClick(data.id)} />
+                                onOfferClick={() => handleOfferClick(data.id)} 
+                                onArchiveClick={() => handleArchiveClick(data.id)}/>
                         ))
                     }
                     </tbody>

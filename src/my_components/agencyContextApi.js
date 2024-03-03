@@ -8,7 +8,7 @@ export default function AgencyContextApi(props) {
         return localStorage.getItem('agentId') || null;
     });
     const [requestId, setRequestId] = useState(null);
-
+    const [archiveList, setArchiveList] = useState([]);
     const createAgentId = (newAgentId) => {
         setAgentId(newAgentId);
     };
@@ -26,8 +26,10 @@ export default function AgencyContextApi(props) {
         <create.Provider value={{
             agentId,
             requestId,
+            archiveList,
             createAgentId,
-            createRequestId
+            createRequestId,
+            setArchiveList
         }}>
             {props.children}
         </create.Provider>
