@@ -3,6 +3,7 @@ import Inputfluid from './input-fluid'
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
 import { create } from './agencyContextApi';
+import Answers from './answers';
 export default function OfferForm() {
     var x = useContext(create);
     console.log("request id:", x.requestId)
@@ -11,6 +12,8 @@ export default function OfferForm() {
     const [dateRange, setDateRange] = useState("");
     const [additionalInfo, setAdditionalInfo] = useState("");
     const [error, setError] = useState(true);
+    const [answers,setAnswers] = useState([]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -28,9 +31,14 @@ export default function OfferForm() {
         }
     };
     
+    function getRequest(){
+        axios.get(`http://localhost:8081/api/v1/requests/${requestId}`).then((res) => {
+                setAnswers(res.data.answers);
+        })
+    }
 
 
-  return (
+    return (
         <>
              <div className='offerForm'>
                 <form>
@@ -44,7 +52,21 @@ export default function OfferForm() {
                             </button>
                         </div>
                 </form>
+                <div id='answers'>
+                     <Answers
+                            destinationType={answers[0]}
+                            language={answers[1]}
+                            dateRange={answers[2]}
+                            include={answers[3]}
+                            group={answers[4]}
+                            budget={answers[5]}
+                            travelOfType={answers[6]}
+                            departurePoint={answers[7]}
+                            appointment={answers[8]}
+                     />
+                </div>
             </div>
+            
         </>
   )
 }
