@@ -1,9 +1,12 @@
-import React, { createContext, useState } from "react";
+import React, {createContext, useState, useEffect} from "react";
 
 export const create = createContext();
 
 export default function AgencyContextApi(props) {
-    const [agentId, setAgentId] = useState(null);
+    const [agentId, setAgentId] = useState(() => {
+        // Retrieve agentId from localStorage if exists
+        return localStorage.getItem('agentId') || null;
+    });
     const [requestId, setRequestId] = useState(null);
 
     const createAgentId = (newAgentId) => {
@@ -13,6 +16,11 @@ export default function AgencyContextApi(props) {
     const createRequestId = (newRequestId) => {
         setRequestId(newRequestId);
     };
+
+    useEffect(() => {
+        // Store agentId in localStorage whenever it changes
+        localStorage.setItem('agentId', agentId);
+    }, [agentId]);
 
     return (
         <create.Provider value={{

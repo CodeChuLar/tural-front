@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import Inputfluid from './input-fluid'
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
@@ -31,11 +31,14 @@ export default function OfferForm() {
         }
     };
     
-    function getRequest(){
+    function getRequestAnswers(){
         axios.get(`http://localhost:8081/api/v1/requests/${x.requestId}`).then((res) => {
                 setAnswers(res.data.answers);
         })
     }
+    useEffect(() => {
+        getRequestAnswers();
+    }, [])
 
 
     return (
