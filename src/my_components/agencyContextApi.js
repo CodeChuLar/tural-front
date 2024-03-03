@@ -18,7 +18,6 @@ export default function AgencyContextApi(props) {
     };
 
     useEffect(() => {
-        // Store agentId in localStorage whenever it changes
         localStorage.setItem('agentId', agentId);
     }, [agentId]);
 
