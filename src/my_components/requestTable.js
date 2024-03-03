@@ -11,7 +11,7 @@ export default function RequestTable() {
         })
     }
     function handleOfferClick(id) {
-        x.setRequestId(id);
+        x.createRequestId(id);
     }
     useEffect(()=>{
         getRequests();

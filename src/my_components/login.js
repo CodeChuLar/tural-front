@@ -24,7 +24,7 @@ export default function Login() {
             });
             setEmail("");
             setPassword("");
-            x.setAgentId(response.agentId);
+            x.createAgentId(response.agentId);
             navigate("/requests");
         } catch (error) {
             console.error('Error:', error);
