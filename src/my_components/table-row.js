@@ -10,7 +10,7 @@ export default function TableRow(props) {
             <td>{props.status}</td>
             <td>
                 <Link to="/offerSend">
-                  <button className='offer' onClick={() => props.onOfferClick(props.id)}>
+                  <button className='offer' onClick={props.onOfferClick}>
                     <MdLocalOffer />
                     <span>Offer</span>
                     </button>

@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { TfiEmail } from "react-icons/tfi";
 import { CgPassword } from "react-icons/cg";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import OfferForm from './offerForm';
+import { create } from './agencyContextApi';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(true);
-    const navigate = useNavigate()
-
+    const navigate = useNavigate();
+    var x = useContext(create);
     const handleSubmit = async (e) => {
         e.preventDefault();
         
@@ -24,7 +24,7 @@ export default function Login() {
             });
             setEmail("");
             setPassword("");
-            <OfferForm agentId={response.id}/>
+            x.setAgentId(response.agentId);
             navigate("/requests");
         } catch (error) {
             console.error('Error:', error);

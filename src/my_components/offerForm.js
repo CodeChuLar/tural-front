@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import Inputfluid from './input-fluid'
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
-export default function OfferForm({requestId},{agentId}) {
+import { create } from './agencyContextApi';
+export default function OfferForm() {
+    var x = useContext(create);
     
     const [price, setPrice] = useState("");
     const [dateRange, setDateRange] = useState("");
@@ -11,7 +13,7 @@ export default function OfferForm({requestId},{agentId}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:8081/api/v1/offers?requestId=${requestId}&agentId=${agentId}`, {
+            const response = await axios.post(`http://localhost:8081/api/v1/offers?requestId=${x.requestId}&agentId=${x.agentId}`, {
                 price: price,
                 dateRange: dateRange,
                 additionalInfo: additionalInfo
