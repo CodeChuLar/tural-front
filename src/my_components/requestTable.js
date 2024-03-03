@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import TableRow from './table-row'
 import axios from 'axios';
-import { create } from './agencyContextApi';
+import AgencyContextApi from './agencyContextApi';
 export default function RequestTable() {
-    const {createRequestId } = useContext(AgencyContext);
+    const {createRequestId } = useContext(AgencyContextApi);
     const [requestsList,setRequestsList] = useState([]);
     function getRequests(){
         axios.get(`http://localhost:8081/api/v1/requests`).then((res)=>{

@@ -3,13 +3,13 @@ import { TfiEmail } from "react-icons/tfi";
 import { CgPassword } from "react-icons/cg";
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { create } from './agencyContextApi';
+import AgencyContextApi from './agencyContextApi';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(true);
     const navigate = useNavigate();
-    const { createAgentId } = useContext(AgencyContext);
+    const { createAgentId } = useContext(AgencyContextApi);
     const handleSubmit = async (e) => {
         e.preventDefault();
         
